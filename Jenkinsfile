@@ -6,6 +6,11 @@ pipeline {
 				sh "pwd ; ls -l"
 			}
 		}
+		stage("build") {
+			steps {
+				sh "mvn clean package"
+			}
+		}
 	}
 
 }

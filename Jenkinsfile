@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	stages {
-		stage("build") {
+		stage("prep") {
 			steps {
 				sh "pwd ; ls -l"
 			}

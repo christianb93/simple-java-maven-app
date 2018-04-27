@@ -1,9 +1,13 @@
 pipeline {
 	agent any
+        environment {
+                MY_TEST_ENV = "joe"
+        }
 	stages {
 		stage("prep") {
 			steps {
 				sh "pwd ; ls -l"
+                                sh "env"
 			}
 		}
 		stage("build") {

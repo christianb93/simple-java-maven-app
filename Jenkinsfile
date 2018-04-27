@@ -29,7 +29,7 @@ pipeline {
 	}
         post {
                 always {
-                        build "Pipeline" wait no
+                        build job: "Pipeline" wait: false
                 }
         }
 }

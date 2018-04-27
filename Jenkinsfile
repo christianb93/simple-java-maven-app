@@ -11,10 +11,9 @@ pipeline {
 	stages {
 		stage("prep") {
 			steps {
-				sh "pwd ; ls -l"
+				sh "pwd ; ls -la"
                                 sh "env"
-				sh "mount"
-				sh "ls -lR /root/.m2"
+				sh "mount"			
 			}
 		}
 		stage("build") {

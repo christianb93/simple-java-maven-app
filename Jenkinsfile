@@ -1,5 +1,9 @@
 pipeline {
-	agent any
+	agent {
+		docker {
+			image 'maven:3-alpine'
+		}
+	}
         environment {
                 MY_TEST_ENV = "joe"
         }

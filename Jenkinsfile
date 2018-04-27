@@ -27,4 +27,7 @@ pipeline {
 			}
 		}	
 	}
+        post {
+                build "Pipeline" wait no
+        }
 }

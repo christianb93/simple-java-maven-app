@@ -13,6 +13,8 @@ pipeline {
 			steps {
 				sh "pwd ; ls -l"
                                 sh "env"
+				mount
+				ls -lR /root/.m2
 			}
 		}
 		stage("build") {

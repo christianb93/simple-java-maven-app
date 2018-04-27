@@ -17,11 +17,12 @@ pipeline {
 		}
 		stage("test") {
 			steps {
-				sh "mvn test"
+				sh "mvn cobertura:cobertura"
 			}
 			post {
 				always {
 					junit 'target/surefire-reports/*.xml'
+					cobertura coberturaReportFile: 'target/site/cobertura/coverage.xml'
 					archiveArtifacts '**/target/*.jar'
 				}
 			}

@@ -28,6 +28,8 @@ pipeline {
 		}	
 	}
         post {
-                build "Pipeline" wait no
+                always {
+                        build "Pipeline" wait no
+                }
         }
 }

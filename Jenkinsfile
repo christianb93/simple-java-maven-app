@@ -35,7 +35,7 @@ pipeline {
                 }
                 stage("run") {
                          steps {
-                                sh "/usr/bin/docker run -it --rm myapp"
+                                sh "/usr/bin/docker run  --rm myapp"
                                }
                 }	
 	}

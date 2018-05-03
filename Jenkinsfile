@@ -31,7 +31,17 @@ pipeline {
 					archiveArtifacts '**/target/*.jar'
 				}
 			}
-		}	
+		}
+		stage("deploy") {
+                        steps {
+                                sh "cp Dockerfile target/ ; docker build -t myapp target/"
+                              }
+                }
+                stage("run") {
+                         steps {
+                                sh "docker run -it --rm myapp"
+                               }
+                }	
 	}
         post {
                 always {

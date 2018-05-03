@@ -1,9 +1,5 @@
 pipeline {
-	agent {
-		docker {
-			image 'maven:3-alpine'		
-		}
-	}
+	agent any
         environment {
                 MY_TEST_ENV = "joe"
         }
@@ -16,6 +12,11 @@ pipeline {
 			}
 		}
 		stage("build") {
+                        agent {
+                                docker {
+                                        image 'maven:3-alpine'
+                                }
+                        }
 			steps {
 				sh "mvn -DskipTests clean package"
 			}

@@ -34,12 +34,12 @@ pipeline {
 		}
 		stage("deploy") {
                         steps {
-                                sh "cp Dockerfile target/ ; docker build -t myapp target/"
+                                sh "cp Dockerfile target/ ; /user/bin/docker build -t myapp target/"
                               }
                 }
                 stage("run") {
                          steps {
-                                sh "docker run -it --rm myapp"
+                                sh "/user/bin/docker run -it --rm myapp"
                                }
                 }	
 	}

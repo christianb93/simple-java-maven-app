@@ -1,13 +1,18 @@
 pipeline {
-	agent any
+	agent {
+		docker {
+			image 'maven:3-alpine'		
+		}
+	}
         environment {
                 MY_TEST_ENV = "joe"
         }
 	stages {
 		stage("prep") {
 			steps {
-				sh "pwd ; ls -l"
+				sh "pwd ; ls -la"
                                 sh "env"
+				sh "mount"			
 			}
 		}
 		stage("build") {
